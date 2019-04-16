@@ -1,0 +1,131 @@
+.rgstrbutton
+{
+    margin-bottom: 10%;
+    height: 80%;
+    background-color: #1AB188;
+    color: #ffffff;
+    font-size: 200%;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right:2.5%;
+}
+.box
+{
+    height: 400px;
+    width: 30%;
+    margin: auto;
+}
+.gridbox
+{
+    background-color: #24323D;
+    box-sizing: border-box;
+    display: grid;
+    height: 100%;
+    grid-row-gap: 4%;
+    width: 100%;
+    grid-template-rows: [row] auto [row] auto [row] auto [row] auto [row] auto [row];
+    grid-template-columns: [col] auto   [col] auto;
+    margin: auto;
+}
+
+.loginbutton
+{
+    height: 80%;
+    color: #ffffff;
+    float: left;
+    width: 95%;
+    margin-top: 10%;
+    border: none;
+    background-color: #435259;
+}
+#login
+{
+    margin-right: 5%;
+}
+#signup
+{
+    margin-left: 5%;
+}
+.loginbutton:hover
+{
+    background-color: #1AB186;
+    color: #ffffff;
+}
+
+.name
+{
+    width: 100%;
+}
+
+input
+{
+    box-sizing: border-box;
+    background-color: #24323D;
+    border-width: 1px;
+    border-color: #ffffff;
+}
+input::placeholder
+{
+    color: #435259;
+}
+#firstname
+{
+    width: 100%;
+}
+#lastname
+{
+    width: 100%;
+}
+
+.email
+{
+    grid-row: row 4;
+    grid-column: col / span 2;
+}
+
+.text
+{
+    margin: auto;
+    color: #ffffff;
+    font-size: 100%;
+    grid-row: row 2;
+    grid-column: col / span 2;
+    margin-bottom: 0;
+}
+.password
+{
+    grid-row: row 5;
+    grid-column: col / span 2;
+}
+
+.emailandpassword
+{
+    width: 95%;
+    height: 100%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+.register
+{
+    grid-row: row 6;
+    grid-column: col / span 2;
+}
+#firstname
+{
+    height: 100%;
+    margin-right: 10%;
+    margin-left: 5%;
+    width: 85%;
+}
+#lastname
+{
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 5%;
+    width: 85%;
+}
+p
+{
+    font-size: 150%;
+}
