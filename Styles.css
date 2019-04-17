@@ -88,7 +88,7 @@ input::placeholder
 {
     margin: auto;
     color: #ffffff;
-    font-size: 100%;
+    font-size: 150%;
     grid-row: row 2;
     grid-column: col / span 2;
     margin-bottom: 0;

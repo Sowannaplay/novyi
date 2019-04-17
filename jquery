@@ -28,8 +28,6 @@ $(".gridbox").css({
 
 });
 
-$("input::placeholder").css("color", "red");
-
 $(".loginbutton").css({
     "height": "80%",
     "color": "#ffffff",
@@ -59,9 +57,7 @@ $("#firstname, #lastname, #email,#password").css({
     "border-width": "1px",
     "border-color": "#ffffff",
     "color": "#1AB186",
-    "placeholder-color": "red"
 });
-
 
 $(".email").css({
     "grid-row":"row 4",
@@ -71,7 +67,7 @@ $(".email").css({
 $(".text").css({
     "margin": "auto",
     "color": "#ffffff",
-    "font-size": "100%",
+    "font-size": "150%",
     "grid-row": "row 2",
     "grid-column": "col / span 2",
     "margin-bottom": "0",
@@ -115,3 +111,7 @@ $(".loginbutton").hover(function(){
 });
 
 $("*:focus").css("outline", "none");
+
+var sheet = document.createElement('style');
+sheet.innerHTML = "input::placeholder {color: #808080}";
+document.head.appendChild(sheet);
