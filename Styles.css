@@ -67,11 +67,7 @@ input
 }
 input::placeholder
 {
-    color: #808080;
-}
-input::placeholder
-{
-    color: #435259;
+    color: #1AB186;
 }
 #firstname
 {
@@ -130,3 +126,4 @@ input::placeholder
     margin-right: 5%;
     width: 85%;
 }
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <!--<link rel="stylesheet" type="text/css" href="Styles.css">-->
+<!--<link rel="stylesheet" type="text/css" href="Styles.css">-->
 </head>
 <body>
 <form method="post" name="form" action="signup.php"><div class="box">
@@ -18,16 +18,16 @@
             <p>Sign up for free</p>
         </div>
         <div>
-            <input type="text" id="firstname" placeholder="First Name*" name="firstname" pattern="[A-Z][a-z]+$" required minlength="2" maxlength="40">
+            <input type="text" id="firstname" placeholder="First Name*" name="firstname" pattern="[A-Z]{1}[a-z]{1,19}" required>
         </div>
         <div>
-            <input type="text" id="lastname" placeholder="Last Name*" name="lastname" pattern="[A-Z][a-z]+$" required minlength="2" maxlength="40">
+            <input type="text" id="lastname" placeholder="Last Name*" name="lastname" pattern="[A-Z]{1}[a-z]{1,19}"  required>
         </div>
         <div class="email">
             <input type="email" id="email" class="emailandpassword" placeholder="Email Address*" name="email" required minlength="5">
         </div>
         <div class="password">
-            <input type="password" id="password" class="emailandpassword" placeholder="Set A Password*" name="password" required maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <input type="password" id="password" class="emailandpassword" placeholder="Set A Password*" name="password" required maxlength="20" pattern="(?=.*[@$!%*?&])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
         </div>
         <div class="register">
             <input type="submit" class="rgstrbutton" onclick="validate(this.form)" value="Get Started">

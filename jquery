@@ -1,6 +1,6 @@
 $(".box").css({
     "height": "400",
-    "width": "30%",
+    "width": "25%",
     "margin": "auto"
 });
 
@@ -27,6 +27,8 @@ $(".gridbox").css({
     "margin": "auto"
 
 });
+
+$("input::placeholder").css("color", "red");
 
 $(".loginbutton").css({
     "height": "80%",
@@ -57,11 +59,9 @@ $("#firstname, #lastname, #email,#password").css({
     "border-width": "1px",
     "border-color": "#ffffff",
     "color": "#1AB186",
+    "placeholder-color": "red"
 });
 
-$("input::placeholder").css({
-    "color":"#808080"
-});
 
 $(".email").css({
     "grid-row":"row 4",
@@ -107,3 +107,11 @@ $("#lastname").css({
     "margin-right": "5%",
     "width": "85%",
 });
+
+$(".loginbutton").hover(function(){
+    $(this).css("background-color", "#1AB188");
+}, function(){
+    $(this).css("background-color", "#435259");
+});
+
+$("*:focus").css("outline", "none");
