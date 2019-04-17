@@ -68,7 +68,18 @@ input
 input::placeholder
 {
     color: #808080;
-
+}
+input::placeholder
+{
+    color: #435259;
+}
+#firstname
+{
+    width: 100%;
+}
+#lastname
+{
+    width: 100%;
 }
 
 .email
