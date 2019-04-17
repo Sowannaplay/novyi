@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title></title>
+    <!--<link rel="stylesheet" type="text/css" href="Styles.css">-->
 </head>
 <body>
-$END$
+<form method="post" name="form" action="signup.php"><div class="box">
+    <div class="gridbox">
+        <div>
+            <input type="button" class="loginbutton" id="signup" value="Sign Up">
+        </div>
+        <div>
+            <input type="button" class="loginbutton" id="login" value="Log In">
+        </div>
+        <div class="text">
+            <p>Sign up for free</p>
+        </div>
+        <div>
+            <input type="text" id="firstname" placeholder="First Name*" name="firstname" pattern="[A-Z][a-z]+$" required minlength="2" maxlength="40">
+        </div>
+        <div>
+            <input type="text" id="lastname" placeholder="Last Name*" name="lastname" pattern="[A-Z][a-z]+$" required minlength="2" maxlength="40">
+        </div>
+        <div class="email">
+            <input type="email" id="email" class="emailandpassword" placeholder="Email Address*" name="email" required minlength="5">
+        </div>
+        <div class="password">
+            <input type="password" id="password" class="emailandpassword" placeholder="Set A Password*" name="password" required maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        </div>
+        <div class="register">
+            <input type="submit" class="rgstrbutton" onclick="validate(this.form)" value="Get Started">
+        </div>
+    </div>
+</div></form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="js"></script>
+<script src="jquery"></script>
 </body>
 </html>
