@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MariaDB - users@localhost" uuid="97f1bec1-ab7c-4c5b-8d08-3558978e21e4">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>drupal</user-name>
+    </data-source>
+  </component>
+</project>
