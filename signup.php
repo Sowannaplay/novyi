@@ -6,8 +6,10 @@ $user[0]=$_POST['firstname'];
 $user[1]=$_POST['lastname'];
 $user[2]=$_POST['email'];
 $user[3]=$_POST['password'];
+$salt="something";
+$hashed=hash('sha256', $user[3].$salt);
 $conn=dbcon();
-$query="INSERT INTO user (firstname, lastname, email, password) VALUES ('$user[0]','$user[1]', '$user[2]', '$user[3]')";
+$query="INSERT INTO user (firstname, lastname, email, password) VALUES ('$user[0]','$user[1]', '$user[2]', '$hashed')";
 $result= mysqli_query($conn, $query);
 
 if ($result==false)
