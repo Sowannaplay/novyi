@@ -29,10 +29,9 @@ if ($result == false) {
 }
 $clientinfo=mysqli_fetch_row($result);
 
-
-if ($clientinfo[0]==$password)
+$salt=file_get_contents("salt.txt");
+if (hash('sha256', $password . $salt)==$clientinfo[0])
 {
-
     session_start();
     $_SESSION['user']=$clientinfo[1];
     header ("location: http://localhost/welcome.php");
