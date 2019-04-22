@@ -23,7 +23,7 @@ function signup()
             $checkqueryresult = mysqli_query($conn, $checkquery);
             if ((mysqli_num_rows($checkqueryresult) == 0)) {
                 $salt = file_get_contents("salt.txt");
-                $hashed = password_hash('$password . $salt', PASSWORD_BCRYPT);
+                $hashed = password_hash($password . $salt, PASSWORD_BCRYPT);
                 $query = "INSERT INTO user (firstname, lastname, email, password) VALUES ('$firstname','$lastname', '$email', '$hashed')";
                 $result = mysqli_query($conn, $query);
                 session_start();
