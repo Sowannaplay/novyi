@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+
+<body class="centered-form">
+<div class="centered-form__form">
+
+    <div class="form-field">
+        <button type="button" class="reg_btn" id="signup_btn" autofocus>Sign Up</button>
+        <button type="button" class="reg_btn" id="login_btn" onclick="window.location.href='login'" >Log In</button>
+    </div>
+
+    <form name="signup" method="POST" action="signup">
+        <br>
+        <div class="form-field">
+            <p>Sign Up for Free</p>
+        </div>
+        <br>
+        <div class="form-field" id="first_last_name">
+            <span id="span_first_name"><input type="text" name="firstname" id="first_name" placeholder="First Name*" pattern="[A-Z]{1}[a-z]{1,19}" required /></span>
+            <span id="span_last_name"><input type="text" name="lastname" id="last_name" placeholder="Last Name*" pattern="[A-Z]{1}[a-z]{1,19}" required /></span>
+        </div>
+
+        <div class="form-field">
+            <input type="email" name="email" id="input_email" placeholder="Email Address*" required maxlength=30 />
+        </div>
+
+        <div class="form-field">
+            <input placeholder="Set A Password*" name="password" type="password" id="input_password" pattern="(?=.*[@$!%*?&])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" required />
+        </div>
+        <br>
+        <div class="form-field">
+            <button type="submit" name="registerbtn" class="submit_btn">GET STARTED</button>
+        </div>
+
+    </form>
+</div>
+<script src="/javascript/jquery-3.4.0.min.js"></script>
+<script src="/javascript/signup.js"></script>
+</body>
+</html>

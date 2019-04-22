@@ -1,0 +1,104 @@
+* {box-sizing: border-box}
+
+body {
+    color: white;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.centered-form {
+    display: flex;
+    /*width: 500px;*/
+    align-items: center;
+    justify-content: center;
+    background: #C0BEBF;
+}
+
+.centered-form__form {
+    background: #25323B;
+    border-radius: 5px;
+}
+
+.reg_btn {
+    float: left;
+    width: 50%;
+    height: 50px;
+    background: #43515A;
+    color: white;
+    border: none;
+    font-size: 15px;
+}
+
+.centered-form__form {
+    padding: 20px;
+}
+
+input {
+    background: #25323B;
+    border: 1px solid #C1BEB7;
+    color: white;
+    padding: 10px;
+}
+
+input:hover {
+    border: 1px solid #1CB086;
+}
+
+*:focus {
+    outline: none;
+}
+
+.submit_btn {
+    width: 100%;
+    height: 50px;
+    background: #1CB086;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.reg_btn:hover {
+    background: #1CB086;
+    border: none;
+}
+
+.form-field {
+    padding: 10px;
+    /*width: 500px;*/
+}
+
+#input_email, #input_password {
+    width: 100%;
+}
+
+#input_email, #input_password, #first_name, #last_name {
+    height: 45px;
+}
+
+input::placeholder {
+    padding: 5px;
+    font-size: 15px;
+    color: #C1BEB7;
+}
+
+/*input[placeholder] + placeholder:after{*/
+/*    content:'*';*/
+/*    color: red;*/
+/*}*/
+
+#span_first_name {
+    margin-right: 5px;
+}
+#span_last_name {
+    margin-left: 5px;
+}
+
+p {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-size: 23px;
+}
+
+input:valid {
+    background: #43515A;
+}
