@@ -15,7 +15,7 @@ if (isset($_GET['signup']))
 if (isset($_POST['login'])){
 
 $conn=dbcon();
-$email=$_POST['email'];
+$email=strtolower($_POST['email']);
 $password=$_POST['password'];
 
 $query="SELECT password, firstname from user WHERE email='$email'";
@@ -30,7 +30,7 @@ if ($result == false) {
 $clientinfo=mysqli_fetch_row($result);
 
 $salt=file_get_contents("salt.txt");
-if (hash('sha256', $password . $salt)==$clientinfo[0])
+if (password_verify($password.$salt, '$clientinfo[0]'))
 {
     session_start();
     $_SESSION['user']=$clientinfo[1];
