@@ -1,43 +1,72 @@
 <?php
-require "/home/drupal/new/src/php/logincontroller.php";
+
+include '/home/drupal/new/src/php/logincontroller.php';
+
 if (isset($_COOKIE['PHPSESSID'])) {
     session_start();
 }
-if ($_SERVER['REQUEST_METHOD']=="POST" && $_SERVER['REQUEST_URI']=="/signup")
-{
-    logincontroller::signup();
-}
-if ($_SERVER['REQUEST_URI']=="/welcome" && isset($_SESSION['user'])==true)
-{
-    logincontroller::welcome();
-}
-else {
-    if ($_SERVER['REQUEST_URI']=='/logout' && isset($_SESSION['user']))
-    {
-        logincontroller::logout();
-    }
-     if (isset($_SESSION['user']) && $_SERVER['REQUEST_URI']!=="/welcome" && $_SERVER['REQUEST_URI']!=='/logout')
-            {
-                header("location: http://localhost/welcome");
-            }
-     }
-if ($_SERVER['REQUEST_METHOD']=='GET' && ($_SERVER['REQUEST_URI']=="/login"))
-{
 
-    logincontroller::showLogin();
-}
-else
-{
-    if (!isset($_SESSION['user']) && ($_SERVER['REQUEST_URI']=="/"))//if ($_SERVER['REQUEST_METHOD']="GET")
-    {
-        logincontroller::showSignUp();
+switch ($_SERVER['REQUEST_URI']){
+
+    case "/signup":
+        if ($_SERVER['REQUEST_METHOD']=="POST") {
+            logincontroller::signup();
+            exit;
+        }
+
+        header("location: http://localhost/");
+        break;
+
+    case "/login":{
+        if ($_SERVER['REQUEST_METHOD']=="POST"){
+            logincontroller::login();
+            exit;
+        }
+        else {
+
+            logincontroller::showLogin();
+            exit;
+        }
     }
-    else if (!isset($_SESSION['user']) && ($_SERVER['REQUEST_URI']!=="/"))
-        {
+
+    case "/welcome":{
+
+        if (isset($_SESSION['user'])==true){
+
+            logincontroller::welcome();
+            exit;
+        }
+        else {
+
             header("location: http://localhost/");
         }
-}
-if ($_SERVER['REQUEST_METHOD']=='POST' && ($_SERVER['REQUEST_URI']=="/login"))
-{
-    logincontroller::login();
+    }
+
+    case "/logout":{
+
+        if (isset($_SESSION['user'])==true){
+
+            logincontroller::logout();
+            exit;
+
+        }
+        else {
+
+            header("location: http://localhost/");
+        }
+    }
+    case "/": {
+        if (isset($_SESSION['user'])==true){
+
+            header ("location: http://localhost/welcome");
+
+        }
+        else{
+
+            logincontroller::showSignUp();
+            exit;
+
+        }
+    }
+    //default: header ("location: http://localhost/");
 }

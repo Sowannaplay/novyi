@@ -15,7 +15,6 @@
         <button type="button" class="reg_btn" id="signup_btn" autofocus>Sign Up</button>
         <button type="button" class="reg_btn" id="login_btn" onclick="window.location.href='login'" >Log In</button>
     </div>
-
     <form name="signup" method="POST" action="signup">
         <br>
         <div class="form-field">
@@ -37,6 +36,15 @@
         <br>
         <div class="form-field">
             <button type="submit" name="registerbtn" class="submit_btn">GET STARTED</button>
+        </div>
+        <div>
+            <p><?php
+            if (isset($_SESSION['flashmsg'])) {
+                echo $_SESSION['flashmsg'];
+                $_SESSION['flashmsg']=null;
+            }
+            ?>
+            </p>
         </div>
 
     </form>

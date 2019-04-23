@@ -15,7 +15,7 @@
     <div class="centered-form__form">
 
         <div class="form-field">
-            <button type="button" class="reg_btn" id="signup_btn" onclick="window.location.href='/index.php'">Sign Up</button>
+            <button type="button" class="reg_btn" id="signup_btn" onclick="window.location.href='/'">Sign Up</button>
             <button type="button" class="reg_btn" id="login_btn">Log In</button>
         </div>
 
@@ -36,6 +36,15 @@
             <br>
             <div class="form-field">
                 <button type="submit" class="submit_btn">LOG IN</button>
+            </div>
+            <div>
+                <p><?php
+                    if (isset($_SESSION['flashmsg'])) {
+                    echo $_SESSION['flashmsg'];
+                    $_SESSION['flashmsg']=null;
+                }
+                ?>
+                </p>
             </div>
 
         </form>
