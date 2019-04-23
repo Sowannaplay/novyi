@@ -1,6 +1,8 @@
 <?php
 require "/home/drupal/new/src/php/logincontroller.php";
-session_start();
+if (isset($_COOKIE['PHPSESSID'])) {
+    session_start();
+}
 if ($_SERVER['REQUEST_METHOD']=="POST" && $_SERVER['REQUEST_URI']=="/signup")
 {
     logincontroller::signup();

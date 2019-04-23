@@ -2,26 +2,14 @@
 
 function login()
 {
-    require "mysqlconnection.php";
-    $conn = dbcon();
+    require "database.php";
+    $conn = new database();
     $email = strtolower($_POST['email']);
     $password = $_POST['password'];
-
-    $query = "SELECT password, firstname from user WHERE email='$email'";
-    $result = mysqli_query($conn, $query);
-    if ($result == false) {
-        echo "Error: Unable to connect to MySQL." . PHP_EOL;
-        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-        echo "Error:" . mysqli_error($conn);
-        exit;
-    }
-    $clientinfo = mysqli_fetch_row($result);
-
-    $salt = file_get_contents("salt.txt");
-    if (password_verify($password . $salt, $clientinfo[0])) {
+    if ($conn->checkcredentials($email, $password)==true) {
+        $client_arr=$conn->find($email);
         session_start();
-        $_SESSION['user'] = $clientinfo[1];
+        $_SESSION['user'] = $client_arr[firstname];
         header("location: http://localhost/welcome");
     } else {
         echo "Password is wrong";
