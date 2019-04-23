@@ -2,7 +2,7 @@
 
 require "database.php";
 
-class user{
+class user {
 
     private $db;
 
@@ -29,8 +29,7 @@ class user{
         return password_verify($password . $salt, $arr[password]);
     }
 
-    public function email_validation($email)
-    {
+    public function email_validation($email) {
         $pattern = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,8})$/";
         $firstcheck = preg_match($pattern, $email);
         return (bool)($firstcheck == 1);

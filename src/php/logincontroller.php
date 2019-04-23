@@ -3,11 +3,8 @@ require "Usermodel.php";
 
 class logincontroller
 {
-    static function signup()
-    {
-
+    static function signup() {
        $user=new user();
-
        $firstname = $_POST['firstname'];
        $lastname = $_POST['lastname'];
        $email = strtolower($_POST['email']);
@@ -22,7 +19,6 @@ class logincontroller
            header("location: http://localhost/welcome");
            return;
          }
-
          else {
              session_start();
              $_SESSION['flashmsg'] = 'Email is already used';
@@ -58,9 +54,7 @@ class logincontroller
     }
     static function logout() {
         session_start();
-
         $_SESSION = array();
-
         if (ini_get("session.use_cookies")) {
           $params = session_get_cookie_params();
           setcookie(session_name(), '', time() - 42000,

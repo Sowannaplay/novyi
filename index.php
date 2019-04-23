@@ -13,60 +13,40 @@ switch ($_SERVER['REQUEST_URI']){
             logincontroller::signup();
             exit;
         }
-
         header("location: http://localhost/");
         break;
 
-    case "/login":{
+    case "/login":
         if ($_SERVER['REQUEST_METHOD']=="POST"){
             logincontroller::login();
             exit;
         }
-        else {
+        logincontroller::showLogin();
+        break;
 
-            logincontroller::showLogin();
-            exit;
-        }
-    }
-
-    case "/welcome":{
-
-        if (isset($_SESSION['user'])==true){
+    case "/welcome":
+        if (isset($_SESSION['user'])==true) {
 
             logincontroller::welcome();
             exit;
         }
-        else {
-
-            header("location: http://localhost/");
-        }
-    }
-
-    case "/logout":{
-
+        header("location: http://localhost/");
+        break;
+    case "/logout":
         if (isset($_SESSION['user'])==true){
 
             logincontroller::logout();
             exit;
-
         }
-        else {
-
-            header("location: http://localhost/");
-        }
-    }
-    case "/": {
+        header("location: http://localhost/");
+        break;
+    case "/":
         if (isset($_SESSION['user'])==true){
 
             header ("location: http://localhost/welcome");
-
-        }
-        else{
-
-            logincontroller::showSignUp();
             exit;
-
         }
-    }
+        logincontroller::showSignUp();
+        break;
     //default: header ("location: http://localhost/");
 }
