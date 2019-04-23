@@ -1,5 +1,6 @@
 <?php
 
+function logout(){
 session_start();
 
 
@@ -16,3 +17,4 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 header('location: http://localhost/');
+}

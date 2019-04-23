@@ -3,19 +3,6 @@
 function login()
 {
     require "mysqlconnection.php";
-
-//if (isset($_GET['login']))
-//{
-//    header ('Location: http://localhost/login.html');
-//}
-//
-//if (isset($_GET['signup']))
-//{
-//    header ('Location: http://localhost/');
-//}
-//
-//if (isset($_POST['login'])){
-
     $conn = dbcon();
     $email = strtolower($_POST['email']);
     $password = $_POST['password'];
@@ -40,4 +27,3 @@ function login()
         echo "Password is wrong";
     }
 }
-//}

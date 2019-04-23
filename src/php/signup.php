@@ -4,15 +4,6 @@ function signup()
     require "mysqlconnection.php";
     $conn = dbcon();
 
-//    if (isset($_GET['login'])) {
-//        header('Location: http://localhost/login');
-//    }
-//
-//    if (isset($_GET['signup'])) {
-//        header('Location: http://localhost/');
-//    }
-//
-//    if (isset($_POST['register'])) {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $email = strtolower($_POST['email']);
@@ -35,7 +26,5 @@ function signup()
         } else {
             echo "Email has incorrect form";
         }
-
-    //}
 }
 ?>
