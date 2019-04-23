@@ -3,7 +3,7 @@ function signup()
 {
     require "database.php";
     require "validation.php";
-    $conn=new database();
+    $conn=database::connect();
 
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];

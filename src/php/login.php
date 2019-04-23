@@ -3,7 +3,7 @@
 function login()
 {
     require "database.php";
-    $conn = new database();
+    $conn = database::connect();
     $email = strtolower($_POST['email']);
     $password = $_POST['password'];
     if ($conn->checkcredentials($email, $password)==true) {
