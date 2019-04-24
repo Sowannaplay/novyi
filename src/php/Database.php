@@ -1,5 +1,5 @@
 <?php
-class database {
+class Database {
 
     private $dbName = users, $dbHost = localhost, $dbPass = root, $dbUser = drupal;
     private static $instance = null;

@@ -1,10 +1,10 @@
 <?php
-require "Usermodel.php";
+require "User.php";
 
-class logincontroller
-{
+class Logincontroller {
+
     static function signup() {
-       $user = new user();
+       $user = new User();
        $firstname = $_POST['firstname'];
        $lastname = $_POST['lastname'];
        $email = strtolower($_POST['email']);
@@ -35,7 +35,7 @@ class logincontroller
     }
 
     static function login() {
-        $user = new user();
+        $user = new User();
         $email = strtolower($_POST['email']);
         $password = $_POST['password'];
         if ($user->checkcredentials($email, $password) == true) {
@@ -80,4 +80,5 @@ class logincontroller
     static function showLogin() {
         require "/home/drupal/new/html/login.html";
     }
+
 }

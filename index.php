@@ -1,6 +1,6 @@
 <?php
 
-include '/home/drupal/new/src/php/logincontroller.php';
+include '/home/drupal/new/src/php/Logincontroller.php';
 
 if (isset($_COOKIE['PHPSESSID'])) {
     session_start();
@@ -9,7 +9,7 @@ if (isset($_COOKIE['PHPSESSID'])) {
 switch ($_SERVER['REQUEST_URI']) {
     case "/signup":
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            logincontroller::signup();
+            Logincontroller::signup();
             exit();
         }
         header("location: http://localhost/");
@@ -17,7 +17,7 @@ switch ($_SERVER['REQUEST_URI']) {
 
     case "/login":
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            logincontroller::login();
+            Logincontroller::login();
             exit();
         }
         elseif (isset($_SESSION['user']) == true) {
@@ -25,20 +25,20 @@ switch ($_SERVER['REQUEST_URI']) {
             exit();
         }
         else {
-            logincontroller::showLogin();
+            Logincontroller::showLogin();
         }
         break;
 
     case "/welcome":
         if (isset($_SESSION['user']) == true) {
-            logincontroller::welcome();
+            Logincontroller::welcome();
             exit();
         }
         header("location: http://localhost/");
         break;
     case "/logout":
         if (isset($_SESSION['user']) == true) {
-            logincontroller::logout();
+            Logincontroller::logout();
             exit();
         }
         header("location: http://localhost/");
@@ -48,7 +48,7 @@ switch ($_SERVER['REQUEST_URI']) {
             header ("location: http://localhost/welcome");
             exit();
         }
-        logincontroller::showSignUp();
+        Logincontroller::showSignUp();
         break;
     //default: header ("location: http://localhost/");
 }

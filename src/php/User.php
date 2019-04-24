@@ -1,13 +1,13 @@
 <?php
 
-require "database.php";
+require "Database.php";
 
-class user {
+class User {
 
     private $db;
 
     function __construct() {
-        $this->db=database::connect();
+        $this->db=Database::connect();
     }
 
     public function save($firstname, $lastname, $email, $password) {
@@ -34,4 +34,5 @@ class user {
         $firstcheck = preg_match($pattern, $email);
         return (bool)($firstcheck == 1);
     }
+
 }
