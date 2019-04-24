@@ -18,13 +18,13 @@ class user {
     }
 
     public function find($email) {
-        $this->db->query("SELECT * FROM user WHERE email='$email'");
+        $this->db->query("SELECT * FROM user WHERE email = '$email'");
         $this->db->execute();
         return $this->db->stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function checkcredentials($email, $password) {
-        $arr=$this->find($email);
+        $arr = $this->find($email);
         $salt = file_get_contents("salt.txt");
         return password_verify($password . $salt, $arr[password]);
     }

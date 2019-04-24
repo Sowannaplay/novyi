@@ -4,7 +4,7 @@ require "Usermodel.php";
 class logincontroller
 {
     static function signup() {
-       $user=new user();
+       $user = new user();
        $firstname = $_POST['firstname'];
        $lastname = $_POST['lastname'];
        $email = strtolower($_POST['email']);
@@ -32,14 +32,14 @@ class logincontroller
            header("location: http://localhost/");
            return;
        }
-
     }
+
     static function login() {
         $user = new user();
         $email = strtolower($_POST['email']);
         $password = $_POST['password'];
-        if ($user->checkcredentials($email, $password)==true) {
-          $client_arr=$user->find($email);
+        if ($user->checkcredentials($email, $password) == true) {
+          $client_arr = $user->find($email);
           session_start();
           $_SESSION['user'] = $client_arr[firstname];
           header("location: http://localhost/welcome");
@@ -62,20 +62,21 @@ class logincontroller
           $params["secure"], $params["httponly"]
           );
         }
-
         session_destroy();
-
         header('location: http://localhost/');
     }
+
     static function welcome() {
         session_start();
           echo "Bedolaga - " . $_SESSION['user'];
           include "/home/drupal/new/html/Welcome.html";
 
     }
+
     static function showSignUp() {
         include "/home/drupal/new/html/index.html";
     }
+
     static function showLogin() {
         require "/home/drupal/new/html/login.html";
     }
