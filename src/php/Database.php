@@ -1,4 +1,5 @@
 <?php
+
 class Database {
 
     private $dbName = users, $dbHost = localhost, $dbPass = root, $dbUser = drupal;
